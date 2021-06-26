@@ -1,0 +1,50 @@
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  height: 70px;
+  color: #fff;
+  position: absolute;
+  width: 450px;
+  top: 20px !important;
+}
+.error:hover {
+  transform: translateY(3px);
+  box-shadow: 0px 20px 40px black;
+}
+.error__error {
+  background: red;
+}
+.error__success {
+  background: green;
+}
+
+.error > button {
+  width: 50px;
+  color: #fff;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: auto;
+  background: rgba(0, 0, 0, 0.05);
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: none;
+  height: 100%;
+}
+@media only screen and (max-width: 640px) {
+  .error {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 455px) {
+  .error {
+    justify-content: space-between;
+    padding-left: 20px;
+  }
+}

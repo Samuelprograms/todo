@@ -1,0 +1,24 @@
+.todos {
+  padding: 10px;
+  height: 400px;
+  overflow-y: scroll;
+  border-radius: 10px;
+  background: #d68501;
+  border: 5px solid black;
+}
+.todos::-webkit-scrollbar {
+  background: transparent;
+  border-radius: 5px;
+  margin: 10px;
+  width: 15px;
+}
+.todos::-webkit-scrollbar-thumb {
+  background: linear-gradient(#f20, #a3f);
+  border-radius: 5px;
+}
+.todos > input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 15px 20px;
+  outline: none;
+}
