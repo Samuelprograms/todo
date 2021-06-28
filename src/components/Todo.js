@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import "./Todo.css";
+import "./../css/Todo.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBackspace, faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 import {
-  faBackspace,
-  faPencilAlt,
-  faDove,
-  faHorse,
-} from "@fortawesome/free-solid-svg-icons";
+  faCheckCircle,
+  faTimesCircle,
+} from "@fortawesome/free-regular-svg-icons";
 
 const Todo = ({
   task,
@@ -25,7 +24,9 @@ const Todo = ({
   const existTaskEdited = () => {
     setNewTodo(task.name);
     if (edit === false) {
-      if (todosNames.includes(newTodo)) {
+      if (task.name === newTodo) {
+        setEdit(true);
+      } else if (todosNames.includes(newTodo)) {
         setError({ ...error, message: "the ToDo already exist", state: true });
         setEdit(false);
       } else {
@@ -39,7 +40,7 @@ const Todo = ({
         setNewTodo(newTodo);
       }
     } else {
-      setEdit(!edit);
+      setEdit(false);
     }
   };
 
@@ -61,13 +62,13 @@ const Todo = ({
           <FontAwesomeIcon
             style={{ cursor: "pointer" }}
             onClick={() => toggleTodo(index)}
-            icon={faDove}
+            icon={faCheckCircle}
           />
         ) : (
           <FontAwesomeIcon
             style={{ cursor: "pointer" }}
             onClick={() => toggleTodo(index)}
-            icon={faHorse}
+            icon={faTimesCircle}
           />
         )}
         <input

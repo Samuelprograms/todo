@@ -1,6 +1,6 @@
 import React from "react";
 import Todo from "./Todo";
-import "./Todos.css";
+import "./../css/Todos.css";
 
 const Todos = ({
   todos,

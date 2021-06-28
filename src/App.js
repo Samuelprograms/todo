@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Todos from "./Todos";
-import Error from "./Error";
+import Todos from "./components/Todos";
+import Error from "./components/Error";
 import { v4 as uuid } from "uuid";
 import { useLocalStorage } from "./useLocalStorage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBroom, faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
-import "./App.css";
+import "./css/App.css";
 const App = () => {
   const [todos, setTodos] = useLocalStorage("toDo", []);
   const [todosNames, setTodosNames] = useState(
